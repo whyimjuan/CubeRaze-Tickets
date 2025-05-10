@@ -43,26 +43,32 @@ client.once(Events.ClientReady, () => {
 });
 
 client.on('messageCreate', async (message) => {
-  if (message.content === '!setticketchannel' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-    const embed = new EmbedBuilder()
-      .setTitle('CubeRaze | Tickets')
-      .setDescription('> Abre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.')
-      .setImage('https://media.discordapp.net/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&=&format=webp&quality=lossless&width=506&height=129')
-      .setColor(0xfebf25);
+ if (message.content === '!setticketchannel' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+  const imageUrl = 'https://media.discordapp.net/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&=&format=webp&quality=lossless&width=506&height=129';
 
-    const menu = new StringSelectMenuBuilder()
-      .setCustomId('ticket_menu')
-      .setPlaceholder('Selecciona una categoría...')
-      .addOptions([
-        { label: 'General', emoji: '🌍', value: 'general' },
-        { label: 'Bugs', emoji: '🛠️', value: 'bugs' },
-        { label: 'Reportar jugador', emoji: '❌', value: 'reportar_jugador' },
-        { label: 'Apelacion', emoji: '🙏', value: 'apelacion' },
-        { label: 'Creador de contenido', emoji: '🎥', value: 'creador_contenido' },
-        { label: 'Tienda Web', emoji: '🛒', value: 'tienda_web' },
-        { label: 'Reportar STAFF', emoji: '⭕', value: 'reportar_staff' },
-        { label: 'Otros', emoji: '❓', value: 'otros' },
-      ]);
+  // 1. Enviar primero la imagen sola
+  await message.channel.send({ files: [imageUrl] });
+
+  // 2. Luego enviar el embed con texto
+  const embed = new EmbedBuilder()
+    .setTitle('CubeRaze | Tickets')
+    .setDescription('> Abre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.')
+    .setColor(0xfebf25);
+
+  const menu = new StringSelectMenuBuilder()
+    .setCustomId('ticket_menu')
+    .setPlaceholder('Selecciona una categoría...')
+    .addOptions([
+      { label: 'General', emoji: '🌍', value: 'general' },
+      { label: 'Bugs', emoji: '🛠️', value: 'bugs' },
+      { label: 'Reportar jugador', emoji: '❌', value: 'reportar_jugador' },
+      { label: 'Apelacion', emoji: '🙏', value: 'apelacion' },
+      { label: 'Creador de contenido', emoji: '🎥', value: 'creador_contenido' },
+      { label: 'Tienda Web', emoji: '🛒', value: 'tienda_web' },
+      { label: 'Reportar STAFF', emoji: '⭕', value: 'reportar_staff' },
+      { label: 'Otros', emoji: '❓', value: 'otros' },
+    ]);
+
 
     const row = new ActionRowBuilder().addComponents(menu);
     await message.channel.send({ embeds: [embed], components: [row] });
