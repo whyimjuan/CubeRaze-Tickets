@@ -46,7 +46,7 @@ client.on('messageCreate', async (message) => {
 if (message.content === '!setticketchannel' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
 const embed = new EmbedBuilder()
 .setTitle('📫 Soporte de CubeRaze')
-.setDescription('**¿NECESITAS AYUDA?**
+.setDescription(`**¿NECESITAS AYUDA?**
 
 Abre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.
 Selecciona la categoría que más se ajuste a lo que necesitas.
@@ -67,7 +67,7 @@ Selecciona la categoría que más se ajuste a lo que necesitas.
 
 ❔ **Otros**
 
-El mal uso de este sistema no será permitido. Si haces un uso indebido, podrías recibir una sanción.')
+El mal uso de este sistema no será permitido. Si haces un uso indebido, podrías recibir una sanción.`)
 .setfooter('CubeRaze Network ©')
 .setColor(0xfebf25);
 
