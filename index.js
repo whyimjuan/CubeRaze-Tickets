@@ -43,13 +43,17 @@ client.once(Events.ClientReady, () => {
 });
 
 client.on('messageCreate', async (message) => {
- if (message.content === '!setticketchannel' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-  const imageUrl = 'https://media.discordapp.net/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&=&format=webp&quality=lossless&width=506&height=129';
+if (
+  message.content === '!setticketchannel' &&
+  message.member.permissions.has(PermissionsBitField.Flags.Administrator)
+) {
+  // Primer embed: solo imagen
+  const imageEmbed = new EmbedBuilder()
+    .setImage('https://media.discordapp.net/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&=&format=webp&quality=lossless&width=506&height=129');
 
-  // 1. Enviar primero la imagen sola
-  await message.channel.send({ files: [imageUrl] });
+  await message.channel.send({ embeds: [imageEmbed] });
 
-  // 2. Luego enviar el embed con texto
+  // Segundo embed: título, descripción y menú
   const embed = new EmbedBuilder()
     .setTitle('CubeRaze | Tickets')
     .setDescription('> Abre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.')
@@ -68,6 +72,7 @@ client.on('messageCreate', async (message) => {
       { label: 'Reportar STAFF', emoji: '⭕', value: 'reportar_staff' },
       { label: 'Otros', emoji: '❓', value: 'otros' },
     ]);
+
 
 
     const row = new ActionRowBuilder().addComponents(menu);
