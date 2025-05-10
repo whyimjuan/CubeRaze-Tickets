@@ -45,8 +45,9 @@ client.once(Events.ClientReady, () => {
 client.on('messageCreate', async (message) => {
   if (message.content === '!setticketchannel' && message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
     const embed = new EmbedBuilder()
-      .setTitle('📫 Soporte de CubeRaze')
-      .setDescription(`**¿NECESITAS AYUDA?**\n\nAbre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.`)
+      .setTitle('CubeRaze | Tickets')
+      .setDescription('> Abre un ticket para recibir ayuda del equipo del STAFF de CubeRaze.')
+      .setImage('https://media.discordapp.net/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&=&format=webp&quality=lossless&width=506&height=129')
       .setColor(0xAE03DE);
 
     const menu = new StringSelectMenuBuilder()
