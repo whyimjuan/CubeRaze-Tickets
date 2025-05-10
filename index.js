@@ -15,9 +15,9 @@ ChannelType
 } = require('discord.js');
 require('dotenv').config();
 
-const TICKETS\_CATEGORY\_ID = '1368050092564807761';
-const CLOSED\_CATEGORY\_ID = '1368049954609692743';
-const STAFF\_ROLE\_ID = '1358617654071394377';
+const TICKETS_CATEGORY_ID = '1368050092564807761';
+const CLOSED_CATEGORY_ID = '1368049954609692743';
+const STAFF_ROLE_ID = '1358617654071394377';
 
 let ticketCounter = 1;
 const ticketMetadata = new Map();
