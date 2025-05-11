@@ -222,7 +222,15 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 client.login(process.env.TOKEN);
 
+
+const express = require('express');
+const app = express();
 const port = process.env.PORT || 3000;
+
+app.get('/', (_, res) => {
+  res.send('¡Hola! El bot está en línea.');
+});
+
 app.listen(port, () => {
-  console.log(`Servidor web escuchando en el puerto ${port}`);
+  console.log(`Servidor corriendo en http://localhost:${port}`);
 });
