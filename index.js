@@ -69,7 +69,8 @@ Selecciona la categoría que más se ajuste a lo que necesitas.
 
 El mal uso de este sistema no será permitido. Si haces un uso indebido, podrías recibir una sanción.`)
       .setFooter({ text: 'CubeRaze Network ©' })
-      .setColor(0xfebf25);
+      .setColor(0xfebf25)
+      .setImage('https://cdn.discordapp.com/attachments/1366906717035692113/1370900943100575766/Diseno_sin_titulo.png?ex=68212e7e&is=681fdcfe&hm=962490ff8261992e831bce5086c8ef840373178911e8da2f3d268ef05436dd8b&format=webp&quality=lossless&width=506&height=129')
 
     const menu = new StringSelectMenuBuilder()
       .setCustomId('ticket_menu')
