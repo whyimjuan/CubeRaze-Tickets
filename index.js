@@ -36,7 +36,7 @@ client.once(Events.ClientReady, () => {
   client.user.setPresence({
     status: 'online',
     activities: [{
-      name: 'CubeRaze.aternos.me',
+      name: 'mc.cuberaze.com',
       type: 4,
     }],
   });
