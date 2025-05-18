@@ -63,7 +63,7 @@ Selecciona la categoría que más se ajuste a lo que necesitas.
 
 🛒 **Tienda Web**
 
-⭕ **Reportar STAFF**
+⭕ **Reclamar Rango**
 
 ❔ **Otros**
 
@@ -82,7 +82,7 @@ El mal uso de este sistema no será permitido. Si haces un uso indebido, podría
         { label: 'Apelacion', emoji: '🙏', value: 'apelacion' },
         { label: 'Creador de contenido', emoji: '🎥', value: 'creador_contenido' },
         { label: 'Tienda Web', emoji: '🛒', value: 'tienda_web' },
-        { label: 'Reportar STAFF', emoji: '⭕', value: 'reportar_staff' },
+        { label: 'Reclamar Rango', emoji: '⭕', value: 'reportar_staff' },
         { label: 'Otros', emoji: '❓', value: 'otros' },
       ]);
 
